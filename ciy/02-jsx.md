@@ -1,16 +1,14 @@
-02. jsx
+jsx
 
 1. 코드 이해하기
 - import 구문은 특정 파일을 불러오는 것이다. (모듈을 불러와서 사용하는 것은 브라우저에는 없는 기능이다. 브라우저가 아닌 환경에서 자바스크립트를 실행할 수 있게 해주는 환경인 Node.js에서 지원한다.)
 - 브라우저에서도 사용하기 위해 번들러(bundler)를 사용한다. (번들은 묶는다는 의미, 파일을 묶듯이 연결하는 것이다)
 - 파일들을 불러오는 것을 웹팩의 로더(loader)라는 기능이 담당한다.
 
-* 
-webpack에서 타입스크립트를 읽을 수 있는 loader의 종류에는 2가지가 있다. (2021~)
-
-- babel-loader + @babel/preset-typescript
-- ts-loader
-- (x)Awesome-typescript-loader (ts-loader의 발전으로 개발이 중지된 상태이다.)
+> *webpack에서 타입스크립트를 읽을 수 있는 loader의 종류에는 2가지가 있다. (2021~)
+>- babel-loader + @babel/preset-typescript
+>- ts-loader
+>- (x)Awesome-typescript-loader (ts-loader의 발전으로 개발이 중지된 상태이다.)
 
 
 2. JSX란?
