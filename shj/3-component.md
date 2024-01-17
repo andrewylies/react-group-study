@@ -286,7 +286,61 @@ class Counter extends Component {
     }
 }
 ```
+##### this.setState에 객체 대신 함수 인자 전달하기
+함수 내부에서 this.setState를 두번 호출할때?
+```
+//this.state를 사용하여 state에 새로운 값 넣기
+onClick={() => {
+    this.setState({ number: number + 1 });
+    this.setState({ number: this.state.number + 1 });
+}}
+
+// 위 처럼 반영해도 state값은 바뀌지 않기 때문에, 아래와 같이 함수 인자로 전달한다.
+// preveState는 기존 상태, props는 현재 지니고 있는 것
+onClick={() => {
+    this.setState((prevState, props) => {
+        return {
+        //업데이트 내용
+        }
+    })
+}}
+```
+
+### 2) 함수 컴포넌트에서 useState 사용하기
+#### 배열 비구조화 할당
+```angular2html
+const array = [1,2];
+const one = array[0];
+const two = array[1];
+
+// 위 코드를 배열 비구조화 할당으로 바꾸면?
+const array = [1,2];
+const [one, two] = array;
+```
+#### useState 사용하기
+
+1. useState 함수 인자에는 초기값을 넣어준다.(숫자,배열,문자 등 상관없음)
+2. 함수 호출 시 배열이 반환되는데, 첫 번째 원소는 현재 상태, 두번째 원소는 상태를 바꾸어 주는 함수이다.(Setter)
+3. 
+
+```
+import { useState } from 'react';
+
+const Say = () => {
+    const [message, setMessage] = useState(''); //초기값 세팅
+    const onClickEnter = () => setMessage('Hi');
+    const onClickLeave = () => setMessage('Bye');
+
+    return (
+    <div>
+        <button onClick={onClickEnter}>입장</button>
+        <button onClick={onClickLeave}>퇴장</button>
+        <h1>{ message }</h1>
+    </div>
+)
+}
+```
 * * *
 ## 3-5 state를 사용할 때 주의 사항
-* * *
-## 3-6 정리
+**state값을 바꾸어야 할 때 setState 혹은 useState를 통해 전달받은 세터 함수를 사용해야 한다.*
+
