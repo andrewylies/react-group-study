@@ -2,7 +2,7 @@
 
 1)
 ```javascript
-<MyComponent ref = {(ref) => {thins.myComponent=ref}} />
+<MyComponent ref = {(ref) => {this.myComponent=ref}} />
 ```
 이 코드에서 MyComponent 내부의 메서드 및 멤버 변수에도 접근할 수 있다.
 
@@ -111,6 +111,21 @@ class ScrollBox extends Component {
 >scrollTop: 세로 스크롤바 위치<br>
 scrollHeight: 스크롤이 있는 박스 안의 div 높이<br>
 clientHeight: 스크롤이 있는 박스의 높이
+
+> scrollTop: 요소의 스크롤바의 수직 위치를 나타냅니다. 이 값은 요소의 맨 위에서 스크롤바까지의 거리(픽셀 단위)를 나타냄<br>
+> scrollHeight: 요소의 전체 콘텐츠 높이를 나타냅니다. 즉, 스크롤바 없이 모든 콘텐츠를 보기 위해 필요한 높이<br>
+> clientHeight: 요소의 높이를 나타냅니다. 이 값은 스크롤바를 포함하지 않는 요소의 내부 높이(픽셀 단위)를 의미<br>
+```javascript
+this.box.scrollTop = scrollHeight - clientHeight;
+```
+>scrollHeight - clientHeight는 요소의 전체 콘텐츠 높이에서 보이는 콘텐츠의 높이를 뺀 값이다. <br>
+> 즉, 스크롤바를 맨 아래로 이동시키기 위해 얼마나 스크롤해야 하는지를 계산.<br>
+>this.box.scrollTop = ...는 계산된 값으로 scrollTop 속성을 설정, 스크롤바가 요소의 맨 아래로 이동
+
+
+
+
+
 
 
 <br><br><br>
