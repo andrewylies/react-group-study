@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dca4e029-b60b-41f9-81f2-b062eceaf11f" name="Changes" comment="[modify] 0118 리액트 스터디">
-      <change beforePath="$PROJECT_DIR$/ciy/04/04-이벤트 핸들링.md" beforeDir="false" afterPath="$PROJECT_DIR$/ciy/04/04-이벤트 핸들링.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ciy/05/05 - ref - DOM에  이름달기 copy.md" beforeDir="false" afterPath="$PROJECT_DIR$/ciy/05/05 - ref - DOM에  이름달기 copy.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ciy/05/05 - ref - 사용.md" beforeDir="false" afterPath="$PROJECT_DIR$/ciy/05/05 - ref - 사용.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ciy/05/05 - ref - 컴포넌트에 ref달기 - 추가예제.md" beforeDir="false" afterPath="$PROJECT_DIR$/ciy/05/05 - ref - 컴포넌트에 ref달기 - 추가예제.md" afterDir="false" />
+    <list default="true" id="dca4e029-b60b-41f9-81f2-b062eceaf11f" name="Changes" comment="[modify] 0124 리액트 스터디">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ciy/05/05 - ref - 컴포넌트에 ref달기.md" beforeDir="false" afterPath="$PROJECT_DIR$/ciy/05/05 - ref - 컴포넌트에 ref달기.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,7 +61,8 @@
       <workItem from="1706059346228" duration="704000" />
       <workItem from="1706063435717" duration="46000" />
       <workItem from="1706068259807" duration="10876000" />
-      <workItem from="1706084286866" duration="556000" />
+      <workItem from="1706084286866" duration="1892000" />
+      <workItem from="1706149530900" duration="2713000" />
     </task>
     <task id="LOCAL-00001" summary="[modify] 컴포넌트 state">
       <created>1705293142456</created>
@@ -80,7 +78,14 @@
       <option name="project" value="LOCAL" />
       <updated>1705582003224</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="[modify] 0124 리액트 스터디">
+      <created>1706085054761</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1706085054761</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -89,6 +94,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="[modify] 컴포넌트 state" />
     <MESSAGE value="[modify] 0118 리액트 스터디" />
-    <option name="LAST_COMMIT_MESSAGE" value="[modify] 0118 리액트 스터디" />
+    <MESSAGE value="[modify] 0124 리액트 스터디" />
+    <option name="LAST_COMMIT_MESSAGE" value="[modify] 0124 리액트 스터디" />
   </component>
 </project>

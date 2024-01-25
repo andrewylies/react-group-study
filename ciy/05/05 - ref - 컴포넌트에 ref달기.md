@@ -122,7 +122,8 @@ this.box.scrollTop = scrollHeight - clientHeight;
 > 즉, 스크롤바를 맨 아래로 이동시키기 위해 얼마나 스크롤해야 하는지를 계산.<br>
 >this.box.scrollTop = ...는 계산된 값으로 scrollTop 속성을 설정, 스크롤바가 요소의 맨 아래로 이동
 
-
+>메서드 로직을 따로 선언하는 이유 <br>
+>함수들을 바깥으로 빼는게 렌더가 자주실행되는 것을 막기위해
 
 
 
