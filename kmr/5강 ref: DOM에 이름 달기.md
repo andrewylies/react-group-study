@@ -52,18 +52,18 @@ import React, { Component } from 'react';
 
 class RefSample extends Component {
 	input = React.createRef();
-// 멤버 변수로 React.createRef()를 담아준다.
+// 1. 멤버 변수로 React.createRef()를 담아준다.
 
 	handleFocus = () => {
 		this.input.current.focus();
-      // 나중에 ref를 설정해준 DOMd에 접근하려면 this.input.current를 조회
+      // 3. 나중에 ref를 설정해준 DOM에 접근하려면 this.input.current를 조회
 	}
 
 render() {
 	return (
 		<div>
   			<input ref={this.input}>
-      // 해당 멤버변수를 ref 달고자 하는 요소에 ref props로 넣어준다.
+      // 2. 해당 멤버변수를 ref 달고자 하는 요소에 ref props로 넣어준다.
     	</div>
 		)
 	}
@@ -76,18 +76,40 @@ render() {
 //내부 컴포넌트 
 import React, { Component } from 'react';
 
+class ScrollBox extends Component {
+
     scrollToBottom = () => {
         const { scrollHeight, clientHeight } = this.box;
-        this.box.scrollTop = scrollHeight = clientHeight;
-    }	
 
-	class ScrollBox extends Component {
+        this.box.scrollTop = scrollHeight - clientHeight;
+      }
+  
+    render() {
+      const style = {
+        border: '1px solid black',
+        height: '300px',
+        width: '300px',
+        overflow: 'auto',
+        position: 'relative'
+      };
+  
+      const innerStyle = {
+        width: '100%',
+        height: '650px',
+        background: 'linear-gradient(white, black)'
+      };
+
       return (
-       	<div>
-			ref={(ref) => {this.box=ref}}
-         </div>
-      )
-	}
+        <div
+          style={style} 
+          ref={(ref) => { this.box = ref }}>
+          <div style={innerStyle} />
+        </div>
+      );
+    }
+  }
+  
+  export default ScrollBox;
 ```
 ```
 //외부 컴포넌트
@@ -100,9 +122,10 @@ import ScrollBox from './ScrollBox' //스크롤 컨트롤 js
 			<ScrollBox ref={(ref) => this.scrollBox=ref}/>
 			<button onClick={() => this.scrollBox.scrollToBottom()}>
               // onClick={this.scrollBox.scrollToBottom}
-              // 처음 랜더링 시 this.scrolllBox가 undefined라 오류 발생
-              // 화살표 함수로 새로운 함수 만들어서 실행하면 버튼 누를 때는
-              // 이미 한 번 랜더링 한 상태라서 값 읽어올 수 있기 때문에 오류 안남 
+              // 처음 랜더링 시 this.scrolllBox가 undefined라 오류 발생 : ref 콜백 함수가 실행되기 전에 렌더링이 완료되기 때문에. 
+              // 리액트는 렌더링과 관련된 모든 작업이 완료된 후에 'componentDidMount' 라이프사이클 메서드가 호출되는데, 이때 ref 콜백함수가 실행된다.
+              
+              // 화살표 함수로 새로운 함수 만들어서 실행하면 버튼 누를 때는 이미 한 번 랜더링 한 상태라서 값 읽어올 수 있기 때문에 오류 안남 
               맨밑
 			</button>
          </div>
