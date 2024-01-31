@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dca4e029-b60b-41f9-81f2-b062eceaf11f" name="Changes" comment="[modify] 0125 리액트 스터디">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ciy/04/04-이벤트 핸들링 예제 - 클래스형 컴포넌트 예제.md" beforeDir="false" afterPath="$PROJECT_DIR$/ciy/04/04-이벤트 핸들링 예제 - 클래스형 컴포넌트 예제.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ciy/06/06 - 컴포넌트 반복.md" beforeDir="false" afterPath="$PROJECT_DIR$/ciy/06/06 - 컴포넌트 반복.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +63,9 @@
       <workItem from="1706068259807" duration="10876000" />
       <workItem from="1706084286866" duration="1892000" />
       <workItem from="1706149530900" duration="3360000" />
+      <workItem from="1706676536987" duration="651000" />
+      <workItem from="1706677196164" duration="126000" />
+      <workItem from="1706677328488" duration="405000" />
     </task>
     <task id="LOCAL-00001" summary="[modify] 컴포넌트 state">
       <created>1705293142456</created>
@@ -97,6 +100,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="[modify] 컴포넌트 state" />
