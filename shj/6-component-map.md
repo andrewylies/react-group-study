@@ -45,6 +45,10 @@ console.log(processed);
 >* key가 없을 때는 버츄얼 돔을 비교하는 과정에서 리스트를 순차적으로 비교하면서 변화를 감지한다.
 >* key가 있으면, 해당 값을 사용해 빠르게 변화를 감지할 수 있다.
 
+> #### 공식문서에 적힌 key 사용 이유
+> 1. React가 어떤 항목을 변경, 추가 또는 삭제할지 식별하는 것을 돕는다.
+> 2. 엘리먼트에 안정적인 고유성을 부여하기 위해 배열 내부의 엘리먼트에 지정해야 한다.
+
 ```javascript
 const articleList = articles.map(article => (
     <Article
@@ -54,6 +58,9 @@ const articleList = articles.map(article => (
     />
 ));
 ```
+#### key값은 유일해야하기 때문에 다른것과 절대 겹치면 안됨!!!
+
+
 
 ### 유동적인 데이터 렌더링
 
@@ -79,5 +86,40 @@ const IterationSample = () => {
 export default Intereationsample;
 ```
 #### 2. 데이터 추가 기능 구현하기
+
+##### array.concat 내장함수를 사용하는 이유는?
+```javascript
+const numbers = [1,2,3];
+const alphabets = ['a','b','c'];
+
+console.log(number.push(alpahbets)); // [1,2,3,['a','b','c']
+
+console.log(number.concat(alphabets)); // [1,2,3,'a','b','c']
+```
+위와 같이, concat()은 push()와 달리 새로운 배열을 만들어준다. <br>
+다만, push()는 배열 안에 배열을 넣어주기 때문에 중첩구조가 된다.
+
+```javascript
+const numbers = [1,2,3];
+const alphabets = ['a','b','c'];
+
+numbers[0].push(4);
+console.log(numbers); // [1,2,3,4];
+
+console.log(number.concat(alphabets)); // [1,2,3,'a','b','c']
+```
+배열 안에 배열이 있을 때 push()로 데이터를 수정하고 싶을 때는,<br>
+배열에 인덱스 요소를 잡아서 직접 추가해야한다.
+
 #### 3. 데이터 제거 기능 구현하기
+
+##### filter() 함수로 배열 안에 해당 요소 삭제해보기.
+
+```javascript
+const numbers = [1,2,3,4,5,6];
+const numberDelete = numbers.filter(number => number > 3);
+console.log(numberDelete); // [4,5,6];
+```
+위와 같이 numbers 배열에 각 요소를 찾고, 그 안에서 3 이상인 요소만 걸러낸다.<br>
+그래서 결과는 4,5,6만 배열에 남게된다.
 
