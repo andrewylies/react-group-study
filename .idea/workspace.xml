@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dca4e029-b60b-41f9-81f2-b062eceaf11f" name="Changes" comment="[modify] 0131 리액트 테스트 공간 세팅" />
+    <list default="true" id="dca4e029-b60b-41f9-81f2-b062eceaf11f" name="Changes" comment="[modify] 0131 리액트 테스트 공간 세팅">
+      <change afterPath="$PROJECT_DIR$/ciy/07/07 - 0.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ciy/07/07 - 2.라이프사이클 메서드의 이해.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ciy/07/07 - 3.라이프사이클 메서드의 이해.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ciy/06/06 - 컴포넌트 반복.md" beforeDir="false" afterPath="$PROJECT_DIR$/ciy/06/06 - 컴포넌트 반복.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,21 +30,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/df_m_27/WebstormProjects/react-group-study/ciy/07",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ciy/07" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/ciy/03" />
       <recent name="$PROJECT_DIR$/ciy/02" />
@@ -62,7 +72,9 @@
       <workItem from="1706149530900" duration="3360000" />
       <workItem from="1706676536987" duration="651000" />
       <workItem from="1706677196164" duration="126000" />
-      <workItem from="1706677328488" duration="813000" />
+      <workItem from="1706677328488" duration="1951000" />
+      <workItem from="1706681555056" duration="1874000" />
+      <workItem from="1706856577809" duration="2518000" />
     </task>
     <task id="LOCAL-00001" summary="[modify] 컴포넌트 state">
       <created>1705293142456</created>
@@ -99,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1706677848788</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="[modify] 0131 리액트 테스트 공간 세팅">
+      <created>1706678174048</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1706678174048</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
