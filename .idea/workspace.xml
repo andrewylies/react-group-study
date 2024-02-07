@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dca4e029-b60b-41f9-81f2-b062eceaf11f" name="Changes" comment="[modify] 0202 라이프사이클 1차 공부">
+    <list default="true" id="dca4e029-b60b-41f9-81f2-b062eceaf11f" name="Changes" comment="[modify] 0207 라이프사이클 메서드 3차 공부">
+      <change afterPath="$PROJECT_DIR$/ciy/07/07 - 4.정리.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ciy/07/07 - 2 - 0.라이프사이클 메서드 살펴보기.md" beforeDir="false" afterPath="$PROJECT_DIR$/ciy/07/07 - 2 - 0.라이프사이클 메서드 살펴보기.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ciy/07/07 - 3.라이프사이클 메서드 사용하기.md" beforeDir="false" afterPath="$PROJECT_DIR$/ciy/07/07 - 3.라이프사이클 메서드 사용하기.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +73,7 @@
       <workItem from="1706677328488" duration="1951000" />
       <workItem from="1706681555056" duration="1874000" />
       <workItem from="1706856577809" duration="5521000" />
-      <workItem from="1707270808558" duration="3580000" />
+      <workItem from="1707270808558" duration="5990000" />
     </task>
     <task id="LOCAL-00001" summary="[modify] 컴포넌트 state">
       <created>1705293142456</created>
@@ -131,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1706863079306</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="[modify] 0207 라이프사이클 메서드 3차 공부">
+      <created>1707274421379</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1707274421379</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,6 +162,7 @@
     <MESSAGE value="[modify] 0125 리액트 스터디" />
     <MESSAGE value="[modify] 0131 리액트 테스트 공간 세팅" />
     <MESSAGE value="[modify] 0202 라이프사이클 1차 공부" />
-    <option name="LAST_COMMIT_MESSAGE" value="[modify] 0202 라이프사이클 1차 공부" />
+    <MESSAGE value="[modify] 0207 라이프사이클 메서드 3차 공부" />
+    <option name="LAST_COMMIT_MESSAGE" value="[modify] 0207 라이프사이클 메서드 3차 공부" />
   </component>
 </project>
