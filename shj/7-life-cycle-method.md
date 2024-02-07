@@ -21,7 +21,7 @@ DOM이 생성되고 웹브라우저상에 나타나는 것.
 
 ![img](https://blog.kakaocdn.net/dn/cr2zCJ/btqAjVjZsTM/zKq2Bn41srvEi7QMUcRjf1/img.png)
 * **constructor** <br>
-컴포넌트를 새로 만들 때마다 호출되는 클래스 생성자 메서드
+컴포넌트를 새로 만들 때마다 호출되는 클래스 생성자 메서드로, 초기 state값을 설정할 수 있다.
 
 * **getDerivedStateFromProps** <br>
 props에 있는 값을 state에 넣을 때 사용하는 메서드
@@ -116,7 +116,7 @@ getSnapshotBeforeUpdate(prevProps, prevState){
 ### componentDidUpdate()
 1. 리렌더링 완료한 후 실행한다.
 2. 업데이트가 끝난 직후여서, DOM 관련 처리해도 된다.
-3. 컴포넌트가 이전에 가졌던 데이트에 접근할 수 있다.
+3. 컴포넌트가 이전에 가졌던 데이터에 접근할 수 있다.
 
 ### componentWillUnmount()
 1. 컴포넌트를 DOM에서 제거할 때 실행한다.
@@ -124,6 +124,7 @@ getSnapshotBeforeUpdate(prevProps, prevState){
 
 ### componentDidCatch()
 1. 컴포넌트 렌더링 도중 에러가 발생했을 때 오류 UI를 보여줄 수 있게 한다.
+2. 첫번째 파라미터는 에러난 내용이 담기고, 두번째 파라미터는 에러가 발생한 위치를 알려준다.
 
 ```javascript
 componentDidCatch(error, info) {
