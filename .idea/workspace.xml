@@ -4,12 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dca4e029-b60b-41f9-81f2-b062eceaf11f" name="Changes" comment="[modify] 0131 리액트 테스트 공간 세팅">
-      <change afterPath="$PROJECT_DIR$/ciy/07/07 - 0.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ciy/07/07 - 2.라이프사이클 메서드의 이해.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ciy/07/07 - 3.라이프사이클 메서드의 이해.md" afterDir="false" />
+    <list default="true" id="dca4e029-b60b-41f9-81f2-b062eceaf11f" name="Changes" comment="[modify] 0207 라이프사이클 메서드 정리 공부">
+      <change afterPath="$PROJECT_DIR$/ciy/08/08 - 0.정리.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ciy/08/08 - 1.useState.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ciy/08/08 - 2.useEffect.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ciy/08/08 - 3.useReducer.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ciy/08/08 - 4.useMemo.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ciy/08/08 - 5.useCallback.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ciy/08/08 - 6.useRef.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ciy/08/08 - 7.커스텀 Hooks 만들기.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ciy/08/08 - 8.다른 Hooks.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ciy/06/06 - 컴포넌트 반복.md" beforeDir="false" afterPath="$PROJECT_DIR$/ciy/06/06 - 컴포넌트 반복.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,23 +35,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/df_m_27/WebstormProjects/react-group-study/ciy/07",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/df_m_27/WebstormProjects/react-group-study/ciy/08&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ciy/08" />
       <recent name="$PROJECT_DIR$/ciy/07" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -74,7 +80,9 @@
       <workItem from="1706677196164" duration="126000" />
       <workItem from="1706677328488" duration="1951000" />
       <workItem from="1706681555056" duration="1874000" />
-      <workItem from="1706856577809" duration="2518000" />
+      <workItem from="1706856577809" duration="5521000" />
+      <workItem from="1707270808558" duration="16739000" />
+      <workItem from="1707380605050" duration="1922000" />
     </task>
     <task id="LOCAL-00001" summary="[modify] 컴포넌트 state">
       <created>1705293142456</created>
@@ -118,7 +126,42 @@
       <option name="project" value="LOCAL" />
       <updated>1706678174048</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="[modify] 0202 라이프사이클 1차 공부">
+      <created>1706859616786</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1706859616786</updated>
+    </task>
+    <task id="LOCAL-00008" summary="[modify] 0202 라이프사이클 1차 공부">
+      <created>1706863079306</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1706863079306</updated>
+    </task>
+    <task id="LOCAL-00009" summary="[modify] 0207 라이프사이클 메서드 3차 공부">
+      <created>1707274421379</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1707274421379</updated>
+    </task>
+    <task id="LOCAL-00010" summary="[modify] 0207 라이프사이클 메서드 정리 공부">
+      <created>1707280492799</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1707280492799</updated>
+    </task>
+    <task id="LOCAL-00011" summary="[modify] 0207 라이프사이클 메서드 정리 공부">
+      <created>1707294474979</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1707294474979</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,6 +184,9 @@
     <MESSAGE value="[modify] 0124 리액트 스터디" />
     <MESSAGE value="[modify] 0125 리액트 스터디" />
     <MESSAGE value="[modify] 0131 리액트 테스트 공간 세팅" />
-    <option name="LAST_COMMIT_MESSAGE" value="[modify] 0131 리액트 테스트 공간 세팅" />
+    <MESSAGE value="[modify] 0202 라이프사이클 1차 공부" />
+    <MESSAGE value="[modify] 0207 라이프사이클 메서드 3차 공부" />
+    <MESSAGE value="[modify] 0207 라이프사이클 메서드 정리 공부" />
+    <option name="LAST_COMMIT_MESSAGE" value="[modify] 0207 라이프사이클 메서드 정리 공부" />
   </component>
 </project>
