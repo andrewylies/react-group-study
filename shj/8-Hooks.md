@@ -157,6 +157,7 @@ React.StrictMode가 활성화 되어있기 때문에, effect, cleanup, effect가
 
 언마운트 될 때만 호출하고 싶다면 위에서 이야기했듯 두번째 파라미터에 빈 배열을 넣으면 된다.
 
+***
 ## useReducer
 
 useState보다 더 다양한 컴포넌트 상황에 따라 다양한 상태를 다른 값으로 업데이트 하고 싶을 때 사용하는 기능.
@@ -197,6 +198,198 @@ const Counter = () => {
 export default Counter;
 ```
 >useState 보다 코드길이가 훨씬 길어지기 때문에, 간단한 카운터 작업은 useState로 쓸거같다.
+
+***
+## useMemo
+useMemo를 사용하면 함수 컴포넌트 내부에서 발생하는 연산을 최적화 할 수 있다.
+### 숫자들의 평균을 보여주는 함수 컴포넌트로 예시를 들면,
+```javascript
+import {useMemo, useState} from "react";
+
+const getAverage = numbers => {
+    console.log('평균값 계산 중')
+    if (numbers.length === 0) return 0;
+    const sum = numbers.reduce((a, b) => a + b);
+    return sum / numbers.length;
+}
+
+const Average = () => {
+    const [list, setList] = useState([]);
+    const [number, setNumber] = useState('');
+
+    const onChange = e => {
+        setNumber(e.target.value);
+    }
+    const onInsert = () => {
+        const nextList = list.concat(parseInt(number));
+        setList(nextList)
+        setNumber('')
+    }
+
+    return (
+        <>
+            <input type="text" value={number} onChange={onChange}/>
+            <button onClick={onInsert}>등록</button>
+            <ul>
+                {list.map((value, index) => (
+                    <li key={index}>{value}</li>
+                ))}
+            </ul>
+            <div>
+                <b>평균값:</b> {getAverage(list)}
+            </div>
+        </>
+    )
+}
+
+export default Average;
+```
+![img](./img/8-img-7.png)
+![img](./img/8-img-8.png)
+
+위 코드로 나오는 인풋에 숫자를 입력하게되면, <br/>
+입력할 때마다 함수가 호출되고 있다.
+
+> 이렇게 불필요한 렌더링을 막고자, useMemo를 사용한다. 
+> ##### useMemo는 값이 바뀌었을 때만 연산을 실행하고, 원하는 값이 바뀌지 않았다면 이전에 연산했던 결과를 다시 가져온다.
+
+```javascript
+const avg = useMemo(() => getAverage(list), [list])
+
+    return (
+        <>
+            <input type="text" value={number} onChange={onChange}/>
+            <button onClick={onInsert}>등록</button>
+            <ul>
+                {list.map((value, index) => (
+                    <li key={index}>{value}</li>
+                ))}
+            </ul>
+            <div>
+                <b>평균값:</b> {avg}
+            </div>
+        </>
+    )
+```
+> list 배열의 내용이 바뀔 때만 getAverage 함수가 호출되도록 한다.
+
+***
+## useCallback
+1. 첫 번째 파라미터 : 생성하고 싶은 함수
+2. 두 번째 파라미터 : 배열 -> 어떤 값이 바뀌었을 때 함수를 새로 생성해야 하는지 명시해야함
+
+```javascript
+import {useMemo, useState, useCallback} from "react";
+
+const getAverage = numbers => {
+    console.log('평균값 계산 중')
+    if (numbers.length === 0) return 0;
+    const sum = numbers.reduce((a, b) => a + b);
+    return sum / numbers.length;
+}
+
+
+// useMemo 사용 시
+const Average = () => {
+    const [list, setList] = useState([]);
+    const [number, setNumber] = useState('');
+
+    // const onChange = e => {
+    //     setNumber(e.target.value);
+    // }
+    
+    const onChange = useCallback(e => {
+        setNumber(e.target.value);
+    }, []) // 컴포넌트가 처음 렌더링될 때만 함수 생성
+    
+    // const onInsert = () => {
+    //     const nextList = list.concat(parseInt(number));
+    //     setList(nextList)
+    //     setNumber('')
+    // }
+    const onInsert = useCallback(() => {
+        const nextList = list.concat(parseInt(number));
+        setList(nextList)
+        setNumber('');
+    }, [number, list]) // number 혹은 list가 바뀌었을 때만 함수 생성
+
+    const avg = useMemo(() => getAverage(list), [list])
+
+    return (
+        <>
+            <input type="text" value={number} onChange={onChange}/>
+            <button onClick={onInsert}>등록</button>
+            <ul>
+                {list.map((value, index) => (
+                    <li key={index}>{value}</li>
+                ))}
+            </ul>
+            <div>
+                <b>평균값:</b> {avg}
+            </div>
+        </>
+    )
+}
+
+export default Average;
+```
+> * onChange 처럼 비어 있는 배열을 넣게 되면 컴포넌트가 렌더링될 때 만들었던 함수를 계속해서 재 사용함
+> * onInsert 처럼 배열 안에 number와 list를 넣게 되면 인풋 내용이 바뀌거나, 새로운 항목이 추가 될 때 새로 만들어진 함수를 사용함
+> * 함수 내부에서 상태 값에 의존해야 할 때 그 값을 반드시 두 번째 파라미터 안에 넣어줘야 함 (onInsert는 기존 number와 list를 조회해서 nextList를 생성시키기 때문)
+
+***
+## useRef
+useRef는 함수 컴포넌트에서 ref를 쉽게 사용하기 위함.
+```javascript
+import {useMemo, useState, useCallback, useRef} from "react";
+
+const getAverage = numbers => {
+    console.log('평균값 계산 중')
+    if (numbers.length === 0) return 0;
+    const sum = numbers.reduce((a, b) => a + b);
+    return sum / numbers.length;
+}
+
+
+// useMemo 사용 시
+const Average = () => {
+    const [list, setList] = useState([]);
+    const [number, setNumber] = useState('');
+    const inputEl = useRef(null); //ref
+    
+    const onChange = useCallback(e => {
+        setNumber(e.target.value);
+    }, []) 
+    
+    const onInsert = useCallback(() => {
+        const nextList = list.concat(parseInt(number));
+        setList(nextList)
+        setNumber('');
+        inputEl.current.focus(); //ref
+    }, [number, list])
+
+    const avg = useMemo(() => getAverage(list), [list])
+
+    return (
+        <>
+            <input type="text" value={number} onChange={onChange} ref={inputEl}/> 
+            <button onClick={onInsert}>등록</button>
+            <ul>
+                {list.map((value, index) => (
+                    <li key={index}>{value}</li>
+                ))}
+            </ul>
+            <div>
+                <b>평균값:</b> {avg}
+            </div>
+        </>
+    )
+}
+
+export default Average;
+```
+> 위 코드에 useRef를 사용하여서 ref를 설정하면, useRef를 통해 만든 객체 안의 current 값이 실제 엘리먼트를 가리킴(input 태그)
+
 
 
 
